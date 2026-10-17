@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Условия использования и конфиденциальность — DOC</title>
+  <meta name="theme-color" content="#07070d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="legal">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-head" style="padding-bottom:30px">
+    <div class="container">
+      <span class="badge reveal"><i data-i="shield"></i>Документы</span>
+      <h1 class="reveal" style="--d:.06s">Правовая <span class="grad-text">информация</span></h1>
+      <p class="reveal" style="--d:.12s">Последнее обновление: 9 октября 2026 г.</p>
+    </div>
+  </section>
+
+  <section class="container narrow legal" style="padding-bottom:40px">
+    <div class="tabs reveal" style="justify-content:center;margin-bottom:10px">
+      <a class="tab on" href="#terms" data-tab="terms">Условия использования</a>
+      <a class="tab" href="#privacy" data-tab="privacy">Конфиденциальность</a>
+    </div>
+
+    <div id="terms" class="panel reveal" style="margin-top:24px">
+      <h2 style="margin-top:0">Условия использования</h2>
+      <h3>1. Общие положения</h3>
+      <p>Используя сервис DOC, вы соглашаетесь с настоящими условиями. Если вы не согласны с ними, пожалуйста, не используйте сервис.</p>
+      <h3>2. Правила использования</h3>
+      <ul>
+        <li>Вы обязуетесь загружать только те файлы, на обработку которых у вас есть права.</li>
+        <li>Запрещено загружать вредоносное программное обеспечение и материалы, нарушающие законодательство.</li>
+        <li>Запрещены попытки обойти установленные лимиты или нарушить работу сервиса.</li>
+      </ul>
+      <h3>3. Лимиты</h3>
+      <p>Для пользователей без аккаунта действует лимит 10 конвертаций и до 20 ГБ в сутки. Для зарегистрированных пользователей — 30 конвертаций и до 50 ГБ в сутки. Лимиты могут изменяться.</p>
+      <h3>4. Доступность сервиса</h3>
+      <p>Сервис предоставляется «как есть». При высокой нагрузке конвертация может быть временно недоступна. Мы стараемся минимизировать такие периоды, но не гарантируем бесперебойную работу.</p>
+      <h3>5. Контакты</h3>
+      <p>По любым вопросам пишите на <a href="mailto:clotc13@gmail.com">clotc13@gmail.com</a>.</p>
+    </div>
+
+    <div id="privacy" class="panel reveal" style="margin-top:24px">
+      <h2 style="margin-top:0">Политика конфиденциальности</h2>
+      <h3>1. Какие данные мы обрабатываем</h3>
+      <ul>
+        <li>Адрес электронной почты и пароль при регистрации.</li>
+        <li>Технические данные: тип браузера, IP-адрес, время запросов.</li>
+        <li>Файлы, которые вы загружаете для конвертации.</li>
+      </ul>
+      <h3>2. Для чего используются данные</h3>
+      <p>Мы используем данные, чтобы предоставлять сервис, применять лимиты, обеспечивать безопасность и отвечать на ваши обращения.</p>
+      <h3>3. Передача третьим лицам</h3>
+      <p>Мы не продаём персональные данные. Данные могут передаваться только провайдерам инфраструктуры, необходимым для работы сервиса, или по требованию закона.</p>
+      <h3>4. Ваши права</h3>
+      <p>Вы можете запросить информацию о своих данных или их удаление, написав на <a href="mailto:clotc13@gmail.com">clotc13@gmail.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/main.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs = document.querySelectorAll('[data-tab]');
+    function sync() {
+      var id = (location.hash || '#terms').slice(1);
+      tabs.forEach(function (t) { t.classList.toggle('on', t.dataset.tab === id); });
+    }
+    window.addEventListener('hashchange', sync);
+    sync();
+  });
+</script>
+</body>
+</html>

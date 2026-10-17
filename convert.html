@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Онлайн-конвертер файлов — DOC</title>
+  <meta name="description" content="Конвертируйте PDF, DOCX, изображения, аудио и видео онлайн. 10 конвертаций в день без регистрации.">
+  <meta name="theme-color" content="#07070d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="convert">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <span class="badge reveal"><span class="dot"></span>Конвертер файлов</span>
+      <h1 class="reveal" style="--d:.06s">Загрузи файл и <span class="grad-text">выбери формат</span></h1>
+      <p class="reveal" style="--d:.12s">Перетащи файл в область ниже. Формат определится автоматически.</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom:40px">
+    <div class="conv">
+      <div class="panel reveal">
+        <!-- Шаг 1: загрузка -->
+        <div id="stepUpload">
+          <label class="drop" id="drop" for="fileInput" tabindex="0">
+            <div class="up"><i data-i="upload"></i></div>
+            <h3>Перетащи файл сюда</h3>
+            <p>PDF, DOCX, PNG, MP4, MP3 и ещё 300+ форматов</p>
+            <div class="or">или</div>
+            <span class="btn primary">Выбрать файл</span>
+            <p style="margin-top:20px;font-size:13.5px;color:var(--dim)" id="dropLimit">Максимальный размер на гостевом аккаунте — 20 ГБ в сутки</p>
+            <input type="file" id="fileInput">
+          </label>
+        </div>
+
+        <!-- Шаг 2: настройки -->
+        <div id="stepSettings" hidden>
+          <div class="file-card">
+            <div class="ext" id="fExt">PDF</div>
+            <div class="info"><b id="fName">file.pdf</b><small id="fMeta">24 МБ</small></div>
+            <button class="icon-btn" id="fRemove" title="Убрать файл" aria-label="Убрать файл"><i data-i="x"></i></button>
+          </div>
+
+          <div class="sec-label">Конвертировать в</div>
+          <div class="tabs" id="tabs" role="tablist"></div>
+          <div class="fmt-grid" id="fmts"></div>
+
+          <div class="sec-label">Настройки</div>
+          <div class="opts">
+            <div class="opt">
+              <label for="quality">Качество <span id="qVal">85%</span></label>
+              <input type="range" id="quality" min="10" max="100" value="85">
+            </div>
+            <div class="opt">
+              <label class="switch" for="ocr"><div>OCR-распознавание<small>Для сканов и изображений с текстом</small></div><input type="checkbox" id="ocr"></label>
+            </div>
+          </div>
+
+          <button class="btn primary lg block go" id="goBtn" disabled><i data-i="zap"></i><span>Выбери формат</span></button>
+
+          <div class="queue" id="queue" hidden>
+            <div class="q-steps" id="qSteps">
+              <div class="q-step" data-s="0"><span class="st"></span>Проверка файла</div>
+              <div class="q-step" data-s="1"><span class="st"></span>Подключение к серверу конвертации</div>
+              <div class="q-step" data-s="2"><span class="st"></span>Постановка в очередь</div>
+              <div class="q-step" data-s="3"><span class="st"></span>Запуск конвертации</div>
+            </div>
+            <div class="overload" id="overload" hidden>
+              <h4><i data-i="server"></i>Сервис перегружен</h4>
+              <p>Сервис перегружен, попробуйте позже. У нас сейчас очень много запросов, и мы обрабатываем их по очереди. Ваш файл не потерян.</p>
+              <div class="meta"><span id="qPos">Очередь: 4 812</span><span>Код: 503 service_overloaded</span></div>
+              <div class="row">
+                <button class="btn" id="retryBtn" disabled><i data-i="refresh"></i><span>Повторить через 20 с</span></button>
+                <a class="btn ghost" href="status.html"><i data-i="activity"></i>Статус сервиса</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-stack">
+        <div class="card reveal" style="--d:.08s">
+          <div class="who">
+            <div class="av"><i data-i="user"></i></div>
+            <div><b>Гость</b><small>Вы не вошли в аккаунт</small></div>
+          </div>
+          <div class="meter">
+            <div class="lbl"><span>Конвертации сегодня</span><b>10 из 10</b></div>
+            <div class="bar"><i></i></div>
+          </div>
+          <div class="meter">
+            <div class="lbl"><span>Объём сегодня</span><b>20 ГБ</b></div>
+            <div class="bar"><i></i></div>
+          </div>
+          <a class="btn primary block" href="register.html">Получить 30 конвертаций и 50 ГБ</a>
+          <p style="text-align:center;margin-top:14px;font-size:14px;color:var(--muted)">Уже есть аккаунт? <a href="login.html" style="color:#fff;font-weight:700">Войти</a></p>
+        </div>
+
+        <div class="card reveal" style="--d:.14s">
+          <h3 style="margin:0 0 16px;font-size:17px">Что умеет конвертер</h3>
+          <ul class="mini-list">
+            <li><i data-i="check"></i>300+ форматов</li>
+            <li><i data-i="check"></i>Автоопределение формата</li>
+            <li><i data-i="check"></i>OCR для сканов</li>
+            <li><i data-i="check"></i>Настройка качества</li>
+          </ul>
+          <p style="margin-top:18px;font-size:14px;color:var(--muted)">Нужна помощь? <a href="contact.html" style="color:var(--cyan)">Напишите нам</a>.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/main.js" defer></script>
+<script src="js/convert.js" defer></script>
+</body>
+</html>

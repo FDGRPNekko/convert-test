@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поддержка — DOC</title>
+  <meta name="description" content="Свяжитесь с поддержкой DOC: clotc13@gmail.com. Поможем решить любую проблему.">
+  <meta name="theme-color" content="#07070d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <span class="badge reveal"><i data-i="headset"></i>Служба поддержки</span>
+      <h1 class="reveal" style="--d:.06s">Поможем <span class="grad-text">решить проблему</span></h1>
+      <p class="reveal" style="--d:.12s">Не получается конвертировать файл, не приходит код или есть вопрос по лимитам? Напишите нам.</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom:40px">
+    <div class="contact">
+      <div class="card mail-card reveal">
+        <div class="icon-box"><i data-i="mail"></i></div>
+        <h3 style="font-size:24px">Напишите на почту</h3>
+        <p>Отвечаем на все обращения. Обычно это занимает до 24 часов, при высокой нагрузке — чуть дольше.</p>
+        <div class="addr"><span style="flex:1">clotc13@gmail.com</span><button class="copy-btn" data-copy="clotc13@gmail.com"><i data-i="copy"></i>Копировать</button></div>
+        <a class="btn primary block" href="mailto:clotc13@gmail.com?subject=DOC%3A%20вопрос%20по%20сервису"><i data-i="mail"></i>Открыть почтовый клиент</a>
+        <div class="rows">
+          <div class="rowi"><div class="icon-box"><i data-i="clock"></i></div><div><b>Время ответа</b><span>В среднем до 24 часов</span></div></div>
+          <div class="rowi"><div class="icon-box"><i data-i="info"></i></div><div><b>Что указать в письме</b><span>Формат файла, что вы делали и текст ошибки. Скриншот ускорит решение.</span></div></div>
+          <div class="rowi"><div class="icon-box"><i data-i="activity"></i></div><div><b>Сервис перегружен?</b><span>Загляните на <a href="status.html" style="color:var(--cyan)">страницу статуса</a>.</span></div></div>
+        </div>
+      </div>
+
+      <div class="panel reveal" style="--d:.1s">
+        <h3 style="font-size:22px;margin-bottom:6px">Форма обращения</h3>
+        <p style="color:var(--muted);margin-bottom:24px">Заполните форму, и мы подготовим письмо в вашем почтовом клиенте.</p>
+        <form id="cForm" novalidate>
+          <div class="field">
+            <label for="cEmail">Ваша почта</label>
+            <div class="input-wrap"><i data-i="mail"></i><input class="input" id="cEmail" type="email" placeholder="you@example.com" autocomplete="email"></div>
+            <div class="field-err" id="cEmailErr">Введите корректный адрес почты</div>
+          </div>
+          <div class="field">
+            <label for="cTopic">Тема</label>
+            <select class="input" id="cTopic">
+              <option>Не работает конвертация</option>
+              <option>Проблема с регистрацией или входом</option>
+              <option>Не приходит код подтверждения</option>
+              <option>Вопрос по лимитам</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cMsg">Сообщение</label>
+            <textarea class="input" id="cMsg" placeholder="Опишите проблему как можно подробнее"></textarea>
+            <div class="field-err" id="cMsgErr">Опишите проблему (не менее 10 символов)</div>
+          </div>
+          <button class="btn primary lg block" type="submit"><i data-i="arrow-right"></i><span>Подготовить письмо</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container">
+      <div class="sec-head center reveal"><span class="eyebrow">Частые проблемы</span><h2>Быстрые ответы</h2></div>
+      <div class="faq reveal">
+        <details open><summary>Пишет «сервис перегружен». Что делать?</summary><div class="ans">Это значит, что сейчас очень много запросов. Подождите несколько минут и повторите попытку. Состояние сервисов отображается на <a href="status.html" style="color:var(--cyan)">странице статуса</a>.</div></details>
+        <details><summary>Не приходит код подтверждения</summary><div class="ans">Проверьте папку «Спам» и правильность адреса. Повторно отправить код можно через 60 секунд. Если письмо так и не пришло, напишите нам.</div></details>
+        <details><summary>Не могу войти в аккаунт</summary><div class="ans">Проверьте почту и пароль. Если забыли пароль, воспользуйтесь <a href="forgot.html" style="color:var(--cyan)">восстановлением</a>.</div></details>
+        <details><summary>Какой у меня лимит?</summary><div class="ans">Гость: 10 конвертаций и до 20 ГБ в сутки. Аккаунт: 30 конвертаций и до 50 ГБ в сутки. Подробности — на странице <a href="pricing.html" style="color:var(--cyan)">лимитов</a>.</div></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/main.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('cForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('cEmail'), msg = document.getElementById('cMsg');
+      var okE = Morphio.isEmail(email.value.trim()), okM = msg.value.trim().length >= 10;
+      email.classList.toggle('bad', !okE); document.getElementById('cEmailErr').classList.toggle('show', !okE);
+      msg.classList.toggle('bad', !okM); document.getElementById('cMsgErr').classList.toggle('show', !okM);
+      if (!okE || !okM) return;
+      var subject = 'DOC: ' + document.getElementById('cTopic').value;
+      var body = msg.value.trim() + '\n\n— ' + email.value.trim();
+      window.location.href = 'mailto:' + Morphio.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.toast('Открываем почтовый клиент…', 'ok');
+    });
+  });
+</script>
+</body>
+</html>

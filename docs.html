@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Документация — DOC</title>
+  <meta name="description" content="Документация DOC: работа с PDF, документами Office, изображениями, аудио и видео, OCR.">
+  <meta name="theme-color" content="#07070d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="docs">
+<div id="site-header"></div>
+
+<main class="container docs">
+  <aside class="docs-nav" id="docsNav">
+    <div class="docs-search input-wrap">
+      <i data-i="search"></i>
+      <input class="input" id="docsSearch" type="search" placeholder="Поиск по документации" aria-label="Поиск по документации" autocomplete="off">
+    </div>
+    <h5>Начало</h5>
+    <a href="#intro">Введение</a>
+    <a href="#quickstart">Быстрый старт</a>
+    <a href="#formats">Поддерживаемые форматы</a>
+    <h5>Руководства</h5>
+    <a href="#pdf">Работа с PDF</a>
+    <a href="#office">Документы Office</a>
+    <a href="#images">Изображения</a>
+    <a href="#media">Аудио и видео</a>
+    <a href="#archives">Архивы и электронные книги</a>
+    <a href="#ocr">OCR-распознавание</a>
+    <h5>Справочник</h5>
+    <a href="#limits">Лимиты</a>
+    <a href="#errors">Коды ошибок</a>
+    <a href="#help">Помощь</a>
+    <p id="noResults" style="display:none;color:var(--dim);padding:10px 12px;font-size:14px">Ничего не найдено</p>
+  </aside>
+
+  <article class="doc">
+    <section id="intro" class="reveal">
+      <span class="eyebrow">Документация</span>
+      <h1>Добро пожаловать в <span class="grad-text">DOC</span></h1>
+      <p class="lead">DOC — онлайн-сервис для конвертации файлов. Здесь собраны руководства по работе с разными типами файлов.</p>
+      <div class="grid-2" style="margin-top:28px">
+        <a class="card lift" href="convert.html" style="padding:24px"><div class="icon-box"><i data-i="zap"></i></div><h3 style="margin-top:16px">Открыть конвертер</h3><p>Конвертировать файл прямо в браузере.</p></a>
+        <a class="card lift" href="#formats" style="padding:24px"><div class="icon-box"><i data-i="layers"></i></div><h3 style="margin-top:16px">Форматы</h3><p>Какие файлы можно конвертировать.</p></a>
+      </div>
+    </section>
+
+    <section id="quickstart" class="reveal">
+      <h2><span class="icon-box"><i data-i="rocket"></i></span>Быстрый старт</h2>
+      <ol>
+        <li>Откройте страницу <a href="convert.html" style="color:var(--cyan)">конвертера</a>.</li>
+        <li>Перетащите файл в область загрузки или нажмите «Выбрать файл».</li>
+        <li>Выберите целевой формат. Исходный формат определяется автоматически по расширению.</li>
+        <li>При необходимости настройте качество и включите OCR.</li>
+        <li>Нажмите «Конвертировать» и дождитесь результата.</li>
+      </ol>
+      <div class="callout info"><i data-i="info"></i><p>Без регистрации доступно <b>10 конвертаций и до 20 ГБ в сутки</b>. С аккаунтом — <b>30 конвертаций и до 50 ГБ</b>.</p></div>
+      <div class="callout warn"><i data-i="alert"></i><p>В часы пиковой нагрузки запросы могут ставиться в очередь, а сервис — временно отвечать, что он перегружен. В этом случае повторите попытку позже. Актуальное состояние — на странице <a href="status.html" style="text-decoration:underline">статуса</a>.</p></div>
+    </section>
+
+    <section id="formats" class="reveal">
+      <h2><span class="icon-box"><i data-i="layers"></i></span>Поддерживаемые форматы</h2>
+      <p>DOC работает с более чем 300 форматами. Ниже — основные категории.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Категория</th><th>Входные форматы</th><th>Выходные форматы</th></tr></thead>
+        <tbody>
+          <tr><td>Документы</td><td><code>pdf</code> <code>docx</code> <code>doc</code> <code>odt</code> <code>rtf</code> <code>txt</code> <code>html</code> <code>md</code></td><td><code>pdf</code> <code>docx</code> <code>odt</code> <code>rtf</code> <code>txt</code> <code>html</code> <code>epub</code></td></tr>
+          <tr><td>Таблицы</td><td><code>xlsx</code> <code>xls</code> <code>csv</code> <code>ods</code></td><td><code>xlsx</code> <code>csv</code> <code>ods</code> <code>json</code> <code>pdf</code></td></tr>
+          <tr><td>Презентации</td><td><code>pptx</code> <code>ppt</code> <code>odp</code></td><td><code>pptx</code> <code>odp</code> <code>pdf</code></td></tr>
+          <tr><td>Изображения</td><td><code>png</code> <code>jpg</code> <code>webp</code> <code>avif</code> <code>heic</code> <code>tiff</code> <code>svg</code> <code>gif</code> <code>bmp</code></td><td><code>png</code> <code>jpg</code> <code>webp</code> <code>avif</code> <code>gif</code> <code>ico</code> <code>pdf</code></td></tr>
+          <tr><td>Аудио</td><td><code>mp3</code> <code>wav</code> <code>flac</code> <code>aac</code> <code>ogg</code> <code>m4a</code> <code>wma</code></td><td><code>mp3</code> <code>wav</code> <code>flac</code> <code>aac</code> <code>ogg</code> <code>opus</code></td></tr>
+          <tr><td>Видео</td><td><code>mp4</code> <code>mov</code> <code>mkv</code> <code>avi</code> <code>webm</code> <code>wmv</code></td><td><code>mp4</code> <code>webm</code> <code>mkv</code> <code>gif</code> <code>mp3</code></td></tr>
+          <tr><td>Архивы</td><td><code>zip</code> <code>7z</code> <code>rar</code> <code>tar</code> <code>gz</code></td><td><code>zip</code> <code>7z</code> <code>tar</code> <code>gz</code></td></tr>
+          <tr><td>Книги</td><td><code>epub</code> <code>mobi</code> <code>azw3</code> <code>fb2</code></td><td><code>epub</code> <code>mobi</code> <code>azw3</code> <code>pdf</code></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="pdf" class="reveal">
+      <h2><span class="icon-box"><i data-i="file-text"></i></span>Работа с PDF</h2>
+      <p>PDF — самый частый формат в DOC. Поддерживаются конвертация в редактируемые форматы и обратно, а также базовые операции над страницами.</p>
+      <h3>PDF → DOCX / ODT / TXT</h3>
+      <p>Сохраняем структуру: заголовки, списки, таблицы, изображения и колонтитулы. Если PDF — это скан, включите <a href="#ocr" style="color:var(--cyan)">OCR</a>, иначе текст не будет распознан.</p>
+      <h3>DOCX / XLSX / PPTX → PDF</h3>
+      <p>Документ экспортируется с встроенными шрифтами, поэтому внешний вид совпадает с оригиналом на любом устройстве.</p>
+      <h3>Изображения → PDF</h3>
+      <p>Можно собрать несколько изображений в один PDF. Порядок страниц соответствует порядку файлов.</p>
+      <h3>Сжатие PDF</h3>
+      <p>Параметр качества уменьшает размер за счёт пересжатия изображений внутри документа.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Качество</th><th>Применение</th><th>Ожидаемый размер</th></tr></thead>
+        <tbody>
+          <tr><td><code>90–100%</code></td><td>Печать, архив</td><td>Почти как оригинал</td></tr>
+          <tr><td><code>60–89%</code></td><td>Универсальный вариант</td><td>40–70% от оригинала</td></tr>
+          <tr><td><code>10–59%</code></td><td>Отправка по почте</td><td>10–40% от оригинала</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout info"><i data-i="info"></i><p>PDF, защищённые паролем, необходимо предварительно разблокировать — мы не подбираем пароли.</p></div>
+    </section>
+
+    <section id="office" class="reveal">
+      <h2><span class="icon-box"><i data-i="table"></i></span>Документы Office</h2>
+      <p>Поддерживаются форматы Microsoft Office и OpenDocument.</p>
+      <ul>
+        <li><b>Word:</b> <code>doc</code>, <code>docx</code>, <code>odt</code>, <code>rtf</code></li>
+        <li><b>Excel:</b> <code>xls</code>, <code>xlsx</code>, <code>ods</code>, <code>csv</code></li>
+        <li><b>PowerPoint:</b> <code>ppt</code>, <code>pptx</code>, <code>odp</code></li>
+      </ul>
+      <h3>Особенности</h3>
+      <ul>
+        <li>Формулы Excel при экспорте в <code>csv</code> заменяются вычисленными значениями.</li>
+        <li>Анимации презентаций не переносятся в PDF.</li>
+        <li>Макросы (<code>VBA</code>) не сохраняются при конвертации.</li>
+        <li>Нестандартные шрифты могут быть заменены на близкие по начертанию.</li>
+      </ul>
+    </section>
+
+    <section id="images" class="reveal">
+      <h2><span class="icon-box"><i data-i="image"></i></span>Изображения</h2>
+      <p>Конвертируйте фото и графику между растровыми и векторными форматами.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Формат</th><th>Сжатие</th><th>Прозрачность</th><th>Когда использовать</th></tr></thead>
+        <tbody>
+          <tr><td><code>png</code></td><td>Без потерь</td><td><span class="pill ok">Да</span></td><td>Скриншоты, логотипы, графика</td></tr>
+          <tr><td><code>jpg</code></td><td>С потерями</td><td><span class="pill bad">Нет</span></td><td>Фотографии</td></tr>
+          <tr><td><code>webp</code></td><td>Оба режима</td><td><span class="pill ok">Да</span></td><td>Изображения для сайтов</td></tr>
+          <tr><td><code>avif</code></td><td>С потерями</td><td><span class="pill ok">Да</span></td><td>Максимальное сжатие</td></tr>
+          <tr><td><code>heic</code></td><td>С потерями</td><td><span class="pill ok">Да</span></td><td>Фото с iPhone</td></tr>
+        </tbody>
+      </table></div>
+      <p>Параметр <code>quality</code> влияет только на форматы с потерями. Для <code>png</code> он игнорируется.</p>
+    </section>
+
+    <section id="media" class="reveal">
+      <h2><span class="icon-box"><i data-i="video"></i></span>Аудио и видео</h2>
+      <p>Конвертация медиафайлов требует больше ресурсов, поэтому в часы пик очередь для видео может быть длиннее, чем для остальных форматов.</p>
+      <h3>Рекомендуемые пресеты</h3>
+      <ul>
+        <li><b>Веб:</b> <code>mp4</code> (H.264 + AAC) — открывается везде.</li>
+        <li><b>Минимальный размер:</b> <code>webm</code> (VP9 + Opus).</li>
+        <li><b>Без потерь звука:</b> <code>flac</code> или <code>wav</code>.</li>
+        <li><b>Извлечь звук из видео:</b> выберите <code>mp3</code> как целевой формат для видеофайла.</li>
+        <li><b>Короткая анимация:</b> видео → <code>gif</code>.</li>
+      </ul>
+    </section>
+
+    <section id="archives" class="reveal">
+      <h2><span class="icon-box"><i data-i="archive"></i></span>Архивы и электронные книги</h2>
+      <p>Перепаковка архивов (<code>rar</code> → <code>zip</code>, <code>7z</code> → <code>zip</code> и т. д.) выполняется без изменения содержимого. Архивы с паролем не поддерживаются.</p>
+      <p>Электронные книги можно конвертировать между <code>epub</code>, <code>mobi</code>, <code>azw3</code> и <code>fb2</code>, а также экспортировать в <code>pdf</code>. Обложка и оглавление сохраняются.</p>
+    </section>
+
+    <section id="ocr" class="reveal">
+      <h2><span class="icon-box"><i data-i="scan"></i></span>OCR-распознавание</h2>
+      <p>OCR превращает сканы и фотографии документов в текст. Включается переключателем «OCR-распознавание» в конвертере.</p>
+      <ul>
+        <li>Поддерживается более 60 языков, включая русский и английский.</li>
+        <li>Лучший результат — при разрешении от 300 DPI и ровной ориентации страницы.</li>
+        <li>Результат можно сохранить как <code>pdf</code> с текстовым слоем, <code>docx</code> или <code>txt</code>.</li>
+      </ul>
+    </section>
+
+    <section id="limits" class="reveal">
+      <h2><span class="icon-box"><i data-i="gauge"></i></span>Лимиты</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Тариф</th><th>Конвертаций в день</th><th>Объём в сутки</th></tr></thead>
+        <tbody>
+          <tr><td>Гость (без аккаунта)</td><td><b>10</b></td><td><b>до 20 ГБ</b></td></tr>
+          <tr><td>Зарегистрированный пользователь</td><td><b>30</b></td><td><b>до 50 ГБ</b></td></tr>
+        </tbody>
+      </table></div>
+      <p>Лимиты обновляются ежедневно в 00:00 по UTC. Подробности — на странице <a href="pricing.html" style="color:var(--cyan)">«Лимиты»</a>.</p>
+    </section>
+
+    <section id="errors" class="reveal">
+      <h2><span class="icon-box"><i data-i="alert"></i></span>Коды ошибок</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Код</th><th>Идентификатор</th><th>Что делать</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill warn">400</span></td><td><code>invalid_request</code></td><td>Проверьте параметры запроса</td></tr>
+          <tr><td><span class="pill warn">413</span></td><td><code>file_too_large</code></td><td>Файл превышает лимит вашего тарифа</td></tr>
+          <tr><td><span class="pill warn">415</span></td><td><code>unsupported_format</code></td><td>Формат не поддерживается</td></tr>
+          <tr><td><span class="pill warn">429</span></td><td><code>limit_exceeded</code></td><td>Суточный лимит исчерпан. Дождитесь обновления лимитов</td></tr>
+          <tr><td><span class="pill bad">503</span></td><td><code>service_overloaded</code></td><td>Сервис перегружен. Повторите запрос позже (используйте экспоненциальную задержку)</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="help" class="reveal">
+      <h2><span class="icon-box"><i data-i="headset"></i></span>Нужна помощь?</h2>
+      <p>Не нашли ответ? Напишите нам на <a href="mailto:clotc13@gmail.com" style="color:var(--cyan)">clotc13@gmail.com</a>. Укажите формат файла, что вы пытались сделать и какая ошибка появилась.</p>
+      <a class="btn" href="contact.html">Перейти в поддержку <i data-i="arrow-right"></i></a>
+    </section>
+  </article>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/main.js" defer></script>
+<script src="js/docs.js" defer></script>
+</body>
+</html>

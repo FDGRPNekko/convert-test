@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация — DOC</title>
+  <meta name="description" content="Создайте аккаунт DOC и получите 30 конвертаций и до 50 ГБ в сутки.">
+  <meta name="theme-color" content="#07070d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register">
+<div id="site-header"></div>
+
+<main class="auth-wrap">
+  <div class="auth reveal">
+    <div class="auth-side">
+      <span class="badge" style="align-self:flex-start"><i data-i="rocket"></i>Бесплатный аккаунт</span>
+      <h2>Получи <span class="grad-text">втрое больше</span> возможностей</h2>
+      <p>Регистрация занимает меньше минуты: укажи почту, придумай пароль и подтверди адрес кодом из письма.</p>
+      <ul class="perks">
+        <li><i data-i="zap"></i><div>30 конвертаций в день<small>гости получают 10</small></div></li>
+        <li><i data-i="server"></i><div>До 50 ГБ в сутки<small>гости получают 20 ГБ</small></div></li>
+        <li><i data-i="shield"></i><div>Приоритет в очереди<small>быстрее на высокой нагрузке</small></div></li>
+        <li><i data-i="clock"></i><div>История конвертаций<small>последние 30 дней</small></div></li>
+      </ul>
+    </div>
+
+    <div class="auth-main">
+      <!-- Шаг 1 -->
+      <section id="step1">
+        <div class="steps-dots"><i class="on"></i><i></i></div>
+        <h1>Создание аккаунта</h1>
+        <p class="sub">Шаг 1 из 2 — данные для входа.</p>
+
+        <div class="alert err" id="alert1" role="alert"><i data-i="alert"></i><span></span></div>
+
+        <form id="regForm" novalidate>
+          <div class="field">
+            <label for="email">Электронная почта</label>
+            <div class="input-wrap">
+              <i data-i="mail"></i>
+              <input class="input" id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="field-err" id="emailErr">Введите корректный адрес почты</div>
+          </div>
+          <div class="field">
+            <label for="password">Пароль</label>
+            <div class="input-wrap has-eye">
+              <i data-i="lock"></i>
+              <input class="input" id="password" type="password" autocomplete="new-password" placeholder="Не менее 8 символов" required>
+              <button type="button" class="eye" id="eyeBtn" aria-label="Показать пароль"><i data-i="eye"></i></button>
+            </div>
+            <div class="strength" id="strength" data-s="0"><i></i><i></i><i></i><i></i></div>
+            <div class="hint" id="strengthHint">Используйте буквы разного регистра, цифры и символы</div>
+            <div class="field-err" id="passErr">Пароль должен содержать не менее 8 символов</div>
+          </div>
+          <label class="check"><input type="checkbox" id="terms"><span>Я принимаю <a href="legal.html#terms" target="_blank" rel="noopener">условия использования</a> и <a href="legal.html#privacy" target="_blank" rel="noopener">политику конфиденциальности</a></span></label>
+          <div class="field-err" id="termsErr" style="margin:-14px 0 16px">Необходимо принять условия</div>
+          <button class="btn primary lg block" id="regSubmit" type="submit"><span>Получить код на почту</span></button>
+        </form>
+        <div class="auth-foot">Уже есть аккаунт? <a href="login.html">Войти</a></div>
+      </section>
+
+      <!-- Шаг 2 -->
+      <section id="step2" hidden>
+        <div class="steps-dots"><i class="on"></i><i class="on"></i></div>
+        <div class="mail-big"><i data-i="mail"></i></div>
+        <h1>Подтвердите почту</h1>
+        <p class="sub">Мы отправили 6-значный код на <b id="sentTo" style="color:#fff"></b>. Введите его ниже.</p>
+
+        <div class="alert err" id="alert2" role="alert"><i data-i="alert"></i><span></span></div>
+
+        <form id="otpForm" novalidate>
+          <div class="otp" id="otp" role="group" aria-label="Код подтверждения"></div>
+          <button class="btn primary lg block" id="otpSubmit" type="submit" style="margin-top:20px"><span>Подтвердить</span></button>
+        </form>
+        <div class="auth-foot" style="margin-top:22px">
+          Не пришёл код? <button class="link-btn" id="resend" type="button" disabled>Отправить повторно через <span id="resendTimer">60</span> с</button>
+          <div style="margin-top:12px;font-size:13.5px">Проверьте папку «Спам». <button class="link-btn" id="changeEmail" type="button" style="font-size:inherit">Изменить почту</button></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/main.js" defer></script>
+<script src="js/auth.js" defer></script>
+</body>
+</html>
